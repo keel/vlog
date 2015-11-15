@@ -1,0 +1,25 @@
+{
+  "name": "vlog",
+  "version": "0.1.0",
+  "description": "A better logger for nodeJs",
+  "main": "lib/vlog.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/keel/vlog.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "error",
+    "console"
+  ],
+  "author": "keel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keel/vlog/issues"
+  },
+  "homepage": "https://github.com/keel/vlog#readme"
+}
