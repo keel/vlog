@@ -1,6 +1,7 @@
 # A better logger for nodeJs
 [![Build Status](https://travis-ci.org/keel/vlog.svg)](https://travis-ci.org/keel/vlog)
-Some times the console can't point the right error stack,so the **vlog** will replace it.
+
+Sometimes the console can't point the right error stack,so the **vlog** will replace it.
 **vlog** will show the error stack in fine format, add your custom msg, and replace console.
 ## Installation
 ```
