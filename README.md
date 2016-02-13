@@ -3,6 +3,26 @@
 
 Sometimes the console can't point the right error stack,so the **vlog** will replace it.
 **vlog** will show the error stack in fine format, add your custom msg, and replace console.
+
+
+## V0.2.3
+* **ee** and **eo** can save unlimit arguments as JSON objects in log
+* Plugin supported, now you can do anything (save error to other file, sent to logstash...) with plugin, try this:
+  ```
+  var plugA = {
+    'log': function() {
+      console.log('plugA----' + (new Date()));
+      console.log.apply(null, arguments);
+    },
+    'error': function() {
+      console.log('plugA----' + (new Date()));
+      console.error.apply(this, arguments);
+    }
+  };
+  vlog.log('test log with plugA:%d', 323);
+  ```
+
+
 ## Installation
 ```
 npm install vlog --save
@@ -24,14 +44,14 @@ var test = function(callback){
    * 返回一个error堆栈,附加当前错误,用于callback到上层
    * @param  {Error} [err]
    * @param  {string} errMsg
-   * @param  {string} [errName]
+   * @param  {object,object...} other objects,will be JSON.stringify and save to log
    * @return {}
    */
   //callback an error
-  callback(vlog.ee(newErr,'error msg and vars','testErrA'));
+  callback(vlog.ee(newErr,'error msg and vars',{'other object':'xyz'},'some other paras','more paras'));
 
   //or use null, vlog will create a Error obj for you
-  //callback(vlog.ee(null,'error msg1','testErrA'));
+  //callback(vlog.ee(null,'error msg1','other object to log'));
 };
 
 
@@ -43,7 +63,6 @@ var test2 = function(e){
    * 打印错误堆栈
    * @param  {Error} err
    * @param  {string} errMsg
-   * @param  {string} errName
    * @return {}
    */
     vlog.eo(e,'test2 error');
@@ -59,7 +78,7 @@ will got this:
 --------- ERR: 2015-11-21 16:39:32 ---------
 testErrA:
   [test.vlog.js]test2 error;
-  [test.vlog.js]error msg1;
+  [test.vlog.js]error msg1 @P:--"other object to log";
     at Object.me.ee (/xxx/lib/vlog.js:48:13)
     at test (/xxx/test/test.vlog.js:12:21)
     at Object.<anonymous> (/xxx/test/test.vlog.js:24:7)
