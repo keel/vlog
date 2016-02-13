@@ -15,8 +15,8 @@ describe('vlog.js', function() {
       var test2 = function(e) {
         if (e) {
           var re = vlog.ee(e,'test2 error').stack;
-          expect(re.indexOf(']test2 error;') > 0).to.be.eql(true);
-          expect(re.indexOf(']error msg1;') > 0).to.be.eql(true);
+          expect(re.indexOf(']test2 error') > 0).to.be.eql(true);
+          expect(re.indexOf(']error msg1') > 0).to.be.eql(true);
         }
         done();
       };
