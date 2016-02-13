@@ -8,19 +8,19 @@ Sometimes the console can't point the right error stack,so the **vlog** will rep
 ## V0.2.3
 * **ee** and **eo** can save unlimit arguments as JSON objects in log
 * Plugin supported, now you can do anything (save error to other file, sent to logstash...) with plugin, try this:
-  ```
-  var plugA = {
-    'log': function() {
-      console.log('plugA----' + (new Date()));
-      console.log.apply(null, arguments);
-    },
-    'error': function() {
-      console.log('plugA----' + (new Date()));
-      console.error.apply(this, arguments);
-    }
-  };
-  vlog.log('test log with plugA:%d', 323);
-  ```
+```javascript
+var plugA = {
+  'log': function() {
+    console.log('plugA----' + (new Date()));
+    console.log.apply(null, arguments);
+  },
+  'error': function() {
+    console.log('plugA----' + (new Date()));
+    console.error.apply(this, arguments);
+  }
+};
+vlog.log('test log with plugA:%d', 323);
+```
 
 
 ## Installation
