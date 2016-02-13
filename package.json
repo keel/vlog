@@ -1,7 +1,7 @@
 {
   "name": "vlog",
-  "version": "0.2.3",
-  "description": "A better logger for nodeJs",
+  "version": "0.2.5",
+  "description": "A better logger for nodejs",
   "main": "lib/vlog.js",
   "scripts": {
     "test": "mocha"

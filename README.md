@@ -1,11 +1,11 @@
-# A better logger for nodeJs
+# A better logger for nodejs
 [![Build Status](https://travis-ci.org/keel/vlog.svg)](https://travis-ci.org/keel/vlog)
 
 Sometimes the console can't point the right error stack,so the **vlog** will replace it.
 **vlog** will show the error stack in fine format, add your custom msg, and replace console.
 
 
-## V0.2.3
+## V0.2.4
 * **ee** and **eo** can save unlimit arguments as JSON objects in log
 * Plugin supported, now you can do anything (save error to other file, sent to logstash...) with plugin, try this:
 ```javascript
@@ -19,6 +19,7 @@ var plugA = {
     console.error.apply(this, arguments);
   }
 };
+var vlog = instance(__filename, plugA);
 vlog.log('test log with plugA:%d', 323);
 ```
 
@@ -91,7 +92,7 @@ testErrA:
     at node.js:972:3
 ```
 
-replace the console functions:
+replace the console functions,so you can add more function with plugin:
 
 ```javascript
 vlog.log('test:name:%s,age:%d',user.name,user.age); // = console.log
