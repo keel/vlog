@@ -11,8 +11,7 @@ npm install vlog --save
 ## Usage
 ```javascript
 //reqire vlog with __filename
-var vlog = require('../lib/vlog').instance(__filename);
-
+var vlog = require('vlog').instance(__filename);
 
 var test = function(callback){
   if (!callback) {
