@@ -1,9 +1,0 @@
-.DS_Store
-Thumbs.db
-*.log
-test.js
-.jshintrc
-temp/
-node_modules/
-public/
-.deploy*/

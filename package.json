@@ -1,6 +1,6 @@
 {
   "name": "vlog",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "A better logger for nodejs",
   "main": "lib/vlog.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+ssh://git@github.com/keel/vlog.git"
   },
 "dependencies": {
-    "cck": "^1.0.3"
+    "cck": "^1.0.12"
   },
   "devDependencies": {
     "chai": "^2.3.0",
