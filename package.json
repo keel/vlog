@@ -1,6 +1,6 @@
 {
   "name": "vlog",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "A better logger for nodejs",
   "main": "lib/vlog.js",
   "scripts": {
@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "chai": "^2.3.0",
-    "rewire": "^2.3.3",
-    "mocha": "^2.2.5"
+    "mocha": "^2.5.3",
+    "rewire": "^2.5.2"
   },
   "keywords": [
     "log",
